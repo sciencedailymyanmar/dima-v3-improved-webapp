@@ -1,0 +1,271 @@
+:root {
+  color: #e8ebff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-shell {
+  min-height: 100vh;
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(135deg, rgba(86, 69, 255, 0.25), rgba(16, 212, 255, 0.12));
+  border: 1px solid rgba(146, 158, 255, 0.26);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+}
+
+.topbar p {
+  margin: 0.3rem 0 0;
+  color: #b9c2ff;
+}
+
+.stat-card {
+  background: rgba(8, 14, 45, 0.75);
+  border: 1px solid rgba(137, 152, 255, 0.24);
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  text-align: right;
+  min-width: 140px;
+}
+
+.stat-card span {
+  display: block;
+  font-size: 0.78rem;
+  color: #91a2ff;
+}
+
+.stat-card strong {
+  font-size: 1.5rem;
+}
+
+.api-panel {
+  background: rgba(8, 12, 34, 0.88);
+  border: 1px solid rgba(132, 146, 255, 0.2);
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.api-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0.8rem;
+}
+
+.api-grid label {
+  display: grid;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  color: #b9c2ff;
+}
+
+.error {
+  margin: 0.65rem 0 0;
+  color: #ffb7b7;
+  font-size: 0.9rem;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.55rem;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+}
+
+.tab {
+  border: 1px solid #2d386f;
+  background: #0f1434;
+  color: #c7d0ff;
+  border-radius: 999px;
+  padding: 0.55rem 0.95rem;
+  white-space: nowrap;
+}
+
+.tab.active {
+  border-color: #6c7dff;
+  background: #2a3394;
+  color: #fff;
+}
+
+.content {
+  min-height: 60vh;
+}
+
+.panel {
+  background: rgba(8, 12, 34, 0.88);
+  border: 1px solid rgba(132, 146, 255, 0.2);
+  border-radius: 16px;
+  padding: 1rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.panel h2 {
+  margin: 0;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #2f3a70;
+  background: #0e153d;
+  color: #eef1ff;
+  padding: 0.8rem;
+  font: inherit;
+}
+
+textarea {
+  min-height: 280px;
+  resize: vertical;
+}
+
+button {
+  border: 1px solid #6a7af8;
+  background: #4051db;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.55rem 0.85rem;
+  cursor: pointer;
+}
+
+button.ghost {
+  background: transparent;
+  border-color: #5561ac;
+}
+
+.actions,
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-panel {
+  grid-template-rows: auto 1fr auto;
+  min-height: 65vh;
+}
+
+.chat-log {
+  border: 1px solid #2b366e;
+  border-radius: 12px;
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.6rem;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+.message {
+  border-radius: 10px;
+  padding: 0.65rem;
+}
+
+.message.user {
+  background: rgba(77, 103, 255, 0.28);
+}
+
+.message.assistant {
+  background: rgba(51, 72, 139, 0.4);
+}
+
+.message span {
+  font-size: 0.74rem;
+  color: #a8b6ff;
+}
+
+.message p {
+  margin: 0.25rem 0 0;
+}
+
+.chat-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem;
+}
+
+.activity-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.activity-item {
+  border: 1px solid #2b3668;
+  border-radius: 12px;
+  padding: 0.75rem;
+  background: rgba(16, 24, 59, 0.75);
+}
+
+.activity-item header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.activity-item small {
+  color: #97a6fb;
+}
+
+.output-box {
+  margin: 0;
+  border: 1px solid #2b366e;
+  border-radius: 12px;
+  background: rgba(7, 12, 30, 0.9);
+  color: #dfe6ff;
+  padding: 0.8rem;
+  white-space: pre-wrap;
+  max-height: 340px;
+  overflow: auto;
+  line-height: 1.5;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.empty {
+  color: #9ba8ef;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 0.75rem;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stat-card {
+    width: 100%;
+    text-align: left;
+  }
+
+  .api-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chat-form {
+    grid-template-columns: 1fr;
+  }
+}
